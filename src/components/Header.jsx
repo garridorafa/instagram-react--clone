@@ -1,6 +1,5 @@
-import React from "react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome',
-import Header from '../components/Header'
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHome,
   faPaperPlane,
@@ -8,22 +7,6 @@ import {
   faHeart,
   faUser
 } from '@fortawesome/free-solid-svg-icons'
-
-function Header(){
-  return(
-    <div className="app__header" style={headerStyle}>
-      <h1>rafagram</h1>
-      <input placeholder="search" style={searchStyle}></input>
-      <div className="appp___header__icons" style={headerIconsStyles}>
-        <FontAwesomeIcon icon={faHome} size="2x" />
-        <FontAwesomeIcon icon={faPaperPlane} size="2x" />
-        <FontAwesomeIcon icon={faClock} size="2x" />
-        <FontAwesomeIcon icon={faHeart} size="2x" />
-        <FontAwesomeIcon icon={faUser} size="2x" />
-      </div>
-    </div>
-  )
-}
 
 const headerStyle = {
   display: "flex",
@@ -47,3 +30,21 @@ const headerIconsStyles = {
   justifyContent: "space-evenly",
   width: "250px"
 }
+
+function Header() {
+  return (
+    <div className="app__header" style={headerStyle}>
+      <h1>rafagram</h1>
+      <input placeholder="search" style={searchStyle}></input>
+      <div className="appp___header__icons" style={headerIconsStyles}>
+        <FontAwesomeIcon icon={faHome} size="2x" />
+        <FontAwesomeIcon icon={faPaperPlane} size="2x" />
+        <FontAwesomeIcon icon={faClock} size="2x" />
+        <FontAwesomeIcon icon={faHeart} size="2x" />
+        <FontAwesomeIcon icon={faUser} size="2x" />
+      </div>
+    </div>
+  )
+}
+
+export default Header;

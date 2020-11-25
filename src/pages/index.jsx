@@ -1,6 +1,5 @@
-import React from "react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome',
-import Header from '../components/Header'
+import React from 'react';
+import Header from '../components/Header';
 
 
 const appStyle = {
@@ -11,7 +10,7 @@ const appStyle = {
 export default function Home() {
   return (
     <div className='app' style={appStyle}>
-     <Header />
+      <Header />
     </div>
   )
 }
