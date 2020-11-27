@@ -4,9 +4,11 @@ import {
   faHome,
   faPaperPlane,
   faClock,
-  faHeart,
-  faUser
+  faHeart
 } from '@fortawesome/free-solid-svg-icons'
+
+import Avatar from "./Avatar";
+
 
 const headerStyle = {
   display: "flex",
@@ -31,7 +33,7 @@ const headerIconsStyles = {
   width: "250px"
 }
 
-function Header() {
+function Header(props) {
   return (
     <div className="app__header" style={headerStyle}>
       <h1>rafagram</h1>
@@ -41,7 +43,7 @@ function Header() {
         <FontAwesomeIcon icon={faPaperPlane} size="2x" />
         <FontAwesomeIcon icon={faClock} size="2x" />
         <FontAwesomeIcon icon={faHeart} size="2x" />
-        <FontAwesomeIcon icon={faUser} size="2x" />
+        <Avatar avatar={props.avatar} />
       </div>
     </div>
   )
