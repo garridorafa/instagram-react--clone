@@ -17,7 +17,10 @@ const headerStyle = {
   borderTop: '1.5px solid lightgray',
   borderBottom: '1.5px solid lightgray',
   alignItems: "center",
-  alignContent: "center"
+  alignContent: "center",
+  position: "sticky",
+  top: "0",
+  zIndex: "1"
 }
 
 const searchStyle = {
@@ -29,8 +32,9 @@ const searchStyle = {
 
 const headerIconsStyles = {
   display: "flex",
+  width: "250px",
   justifyContent: "space-evenly",
-  width: "250px"
+  alignItems: "center",
 }
 
 function Header(props) {
