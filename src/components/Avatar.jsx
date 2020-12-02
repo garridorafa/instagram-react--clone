@@ -1,18 +1,22 @@
 import React from 'react';
+import styled from "styled-components";
 
-const avatarStyle = {
-  width:"46px",
-  height:"46px",
-  borderRadius:"150px",
-  objectFit: "cover",
-  marginRight: "16px"
-}
+
+const StyledDiv = styled.div`
+  img {
+    width: 46px;
+    height: 46px;
+    border-radius: 150px;
+    object-fit: cover;
+    margin-right: 16px;
+  }
+`
 
 function Avatar(props) {
   return (
-    <div >
-      <img src={props.avatar} alt="User Avatar" style={avatarStyle} />
-    </div>
+    <StyledDiv>
+      <img src={props.avatar} alt="User Avatar" />
+    </StyledDiv>
   )
 }
 

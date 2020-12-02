@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHome,
@@ -10,46 +11,47 @@ import {
 import Avatar from "./Avatar";
 
 
-const headerStyle = {
-  display: "flex",
-  justifyContent: "space-between",
-  backgroundColor: "white",
-  borderTop: '1.5px solid lightgray',
-  borderBottom: '1.5px solid lightgray',
-  alignItems: "center",
-  alignContent: "center",
-  position: "sticky",
-  top: "0",
-  zIndex: "1"
-}
+const StyledDiv = styled.div`
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: 67px;
+  background-color: white;
+  border-bottom: 1.5px solid lightgray;
+  border-bottom: '1.5px solid lightgray';
+  
+  .search {
+    background-color: #fafafa;
+    border: 1.5px solid lightgray;
+    height: 29px;
+    border-radius: 3px;
+  }
 
-const searchStyle = {
-  backgroundColor: "#fafafa",
-  border: '1.5px solid lightgray',
-  height: "29px",
-  borderRadius: "5px",
-}
-
-const headerIconsStyles = {
-  display: "flex",
-  width: "250px",
-  justifyContent: "space-evenly",
-  alignItems: "center",
-}
+  .icons {
+    display: flex;
+    width: 250px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+`
 
 function Header(props) {
   return (
-    <div className="app__header" style={headerStyle}>
+    <StyledDiv >
       <h1>rafagram</h1>
-      <input placeholder="search" style={searchStyle}></input>
-      <div className="appp___header__icons" style={headerIconsStyles}>
+      <input className="search" placeholder="search" />
+      <div className="icons" >
         <FontAwesomeIcon icon={faHome} size="2x" />
         <FontAwesomeIcon icon={faPaperPlane} size="2x" />
         <FontAwesomeIcon icon={faClock} size="2x" />
         <FontAwesomeIcon icon={faHeart} size="2x" />
         <Avatar avatar={props.avatar} />
       </div>
-    </div>
+    </StyledDiv>
   )
 }
 

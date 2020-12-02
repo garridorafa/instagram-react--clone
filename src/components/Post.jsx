@@ -1,83 +1,95 @@
 import React from 'react';
+import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faComment, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
+
 import Avatar from './avatar';
 
 
-const postStyle = {
-  margin: "22px",
-  minWidth: "400px",
-  marginBottom: "60px",
-  backgroundColor: "white",
-  border: "1.5px solid lightgray"
-}
+const StyledDiv = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  margin: 22px;
+  min-width: 400px;
+  max-width: 800px;
+  margin-bottom: 60px;
+  background-color: white;
+  border: 1.5px solid lightgray;
 
-const postHeaderStyle = {
-  display: "flex",
-  padding: "16px",
-  position: "relative"
+  .header {
+    display: flex;
+    padding: 16px;
+    position: relative;
+
+    .options {
+      position: absolute;
+      right: 20px;
+      font-weight: bold;
+    }
+  }
   
-}
+  .body {
 
-const postOptionsStyle = {
-  position: "absolute",
-  right: "20px",
-  fontWeight: "bold"
-}
+    img{
+      height: 532px;
+      width: 100%;
+      object-fit: cover;
+    }
 
-const postImg = {
-  width: "100%",
-  objectFit: "cover"
-}
+    .footer {
+      margin: 18px;
 
-const postFooterStyle = {
-  margin: "18px"
-}
+      .icons {
+      display: flex;
+      width: 120px;
+      justify-content: space-between;
+      align-items: center;
+      }
+    }
 
-const footerIconsStyles = {
-  display: "flex",
-  width: "120px",
-  justifyContent: "space-between",
-  alignItems: "center",
-}
+    .comments {
+      border-top: 1.5px solid lightgray;
+      padding: 5px;
+      
+      input {
+        width: 90%;
+        height: 50px;
+        border: none;
+      }
+    }
 
-const commentArea = {
-  borderTop: "1.5px solid lightgray",
-  padding: "5px"
-}
-
-const commentStyle = {
-  width: "90%",
-  height: "50px",
-  border: "none",
-}
+  }
+`
 
 function Post(props) {
   return (
-    <div className="post" style={postStyle}>
+    <StyledDiv >
 
-      <div className="post__postHeader" style={postHeaderStyle} >
+      <div className="header" >
         <Avatar avatar={props.avatar} />
         <h3> {props.username} </h3>  
-        <p style={postOptionsStyle} >...</p>
+        <p className="options">...</p>
       </div>
       
-      <div className="post__postBody">
-        <img src={props.image} alt="post" style={postImg} />
-        <div style={postFooterStyle}>
-          <div style={footerIconsStyles}>
+      <div className="body">
+        <img src={props.image} alt="post" />
+        
+        <div className="footer">
+          <div className="icons">
             <FontAwesomeIcon icon={faHeart} size="2x" />
             <FontAwesomeIcon icon={faComment} size="2x" />
             <FontAwesomeIcon icon={faPaperPlane} size="2x" />
           </div>
            <strong> {props.username} </strong> {props.caption}
         </div>
-        <div style={commentArea} >
-          <input placeholder="Add a comment" style={commentStyle} />
+
+        <div className="comments" >
+          <input placeholder="Add a comment" />
           <a>ADD</a>
         </div>
+
       </div>
-    </div>
+    </StyledDiv>
   )
 }
 

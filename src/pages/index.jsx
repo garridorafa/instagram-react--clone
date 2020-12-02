@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import styled from 'styled-components';
 import Header from '../components/Header';
 import Post from '../components/Post';
 
@@ -45,22 +46,22 @@ const data = [
 ]
 
 
-const appStyle = {
-  backgroundColor: "#fafafa",
-  height: "100vh",
-  marginTop: "-8px",
-}
+const StyledDiv = styled.div`
+  background-color: #fafafa;
+  height: 100vh;
+  margin-top: -8px;
+`
 
 export default function Home() {
   const [posts, setPosts] = useState(data);
   return (
-    <div className='app' style={appStyle}>
+    <StyledDiv >
       <Header avatar={avatar} />
       {
         posts.map(post => (
           <Post avatar={post.avatar} username={post.username} caption={post.caption} image={post.image} />
         ))
       }
-    </div>
+    </StyledDiv>
   )
 }
