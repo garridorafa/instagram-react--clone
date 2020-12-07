@@ -61,7 +61,7 @@ const StyledDiv = styled.div`
   }
 `
 
-function Post(props) {
+const Post = (props) => {
   return (
     <StyledDiv >
 

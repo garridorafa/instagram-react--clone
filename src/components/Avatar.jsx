@@ -12,7 +12,7 @@ const StyledDiv = styled.div`
   }
 `
 
-function Avatar(props) {
+const Avatar = (props) => {
   return (
     <StyledDiv>
       <img src={props.avatar} alt="User Avatar" />

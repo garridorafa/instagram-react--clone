@@ -1,10 +1,7 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
-import Header from '../components/Header';
+
+import Layout from '../components/Layout';
 import Post from '../components/Post';
-
-
-const avatar = 'http://localhost:8000/avatar1.jpg';
 
 const data = [
   {
@@ -46,22 +43,17 @@ const data = [
 ]
 
 
-const StyledDiv = styled.div`
-  background-color: #fafafa;
-  height: 100vh;
-  margin-top: -8px;
-`
-
-export default function Home() {
+const Home = () => {
   const [posts, setPosts] = useState(data);
   return (
-    <StyledDiv >
-      <Header avatar={avatar} />
+    <Layout >
       {
         posts.map(post => (
           <Post avatar={post.avatar} username={post.username} caption={post.caption} image={post.image} />
         ))
       }
-    </StyledDiv>
+    </Layout>
   )
 }
+
+export default Home;

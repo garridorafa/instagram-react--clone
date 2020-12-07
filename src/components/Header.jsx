@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -24,6 +25,20 @@ const StyledDiv = styled.div`
   border-bottom: 1.5px solid lightgray;
   border-bottom: '1.5px solid lightgray';
   
+  .logoName {
+    text-decoration: none;
+
+    :active {
+      color: black;
+    }
+
+    :visited {
+    color:black;
+    }
+  }
+ 
+  
+
   .search {
     background-color: #fafafa;
     border: 1.5px solid lightgray;
@@ -39,18 +54,28 @@ const StyledDiv = styled.div`
   }
 `
 
-function Header(props) {
+const Header = (props) => {
   return (
     <StyledDiv >
-      <h1>rafagram</h1>
+
+      <Link to="/" className="logoName">
+        <h1>rafagram</h1>
+      </Link>
+
       <input className="search" placeholder="search" />
+
       <div className="icons" >
-        <FontAwesomeIcon icon={faHome} size="2x" />
+        <Link to="/" className="logoName">
+          <FontAwesomeIcon icon={faHome} size="2x" />
+        </Link>
         <FontAwesomeIcon icon={faPaperPlane} size="2x" />
         <FontAwesomeIcon icon={faClock} size="2x" />
         <FontAwesomeIcon icon={faHeart} size="2x" />
-        <Avatar avatar={props.avatar} />
+        <Link to='/about/'>
+          <Avatar avatar={props.avatar} />
+        </Link>
       </div>
+      
     </StyledDiv>
   )
 }
