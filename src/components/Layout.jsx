@@ -8,7 +8,7 @@ const avatar = 'http://localhost:8000/avatar1.jpg';
 
 const StyledDiv = styled.div`
   background-color: #fafafa;
-  height: 100vh;
+  height: 100%;
   margin-top: -8px;
 `
 
@@ -16,7 +16,9 @@ const Layout = ({ children }) => {
   return (
     <StyledDiv>
       <Header avatar={avatar} />
-      {children}
+      <div>
+        {children}
+      </div>
       <Footer />
     </StyledDiv>
   )

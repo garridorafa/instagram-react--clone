@@ -23,10 +23,10 @@ const StyledDiv = styled.div`
   height: 67px;
   background-color: white;
   border-bottom: 1.5px solid lightgray;
-  border-bottom: '1.5px solid lightgray';
   
   .logoName {
     text-decoration: none;
+    color: black;
 
     :active {
       color: black;
@@ -37,8 +37,6 @@ const StyledDiv = styled.div`
     }
   }
  
-  
-
   .search {
     background-color: #fafafa;
     border: 1.5px solid lightgray;
@@ -68,10 +66,12 @@ const Header = (props) => {
         <Link to="/" className="logoName">
           <FontAwesomeIcon icon={faHome} size="2x" />
         </Link>
-        <FontAwesomeIcon icon={faPaperPlane} size="2x" />
+        <Link to="/direct/" className="logoName">
+          <FontAwesomeIcon icon={faPaperPlane} size="2x" />
+        </Link>
         <FontAwesomeIcon icon={faClock} size="2x" />
         <FontAwesomeIcon icon={faHeart} size="2x" />
-        <Link to='/about/'>
+        <Link to="/about/">
           <Avatar avatar={props.avatar} />
         </Link>
       </div>

@@ -13,6 +13,7 @@ const profile = {
 const StyledDiv = styled.div`
   margin-left:auto;
   margin-right:auto;
+  max-width: 1000px;
 
   .info{
     display: flex;

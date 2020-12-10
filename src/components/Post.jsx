@@ -7,8 +7,7 @@ import Avatar from './avatar';
 
 
 const StyledDiv = styled.div`
-  margin-left: auto;
-  margin-right: auto;
+  margin-right: 0;
   margin: 22px;
   min-width: 400px;
   max-width: 800px;
@@ -47,7 +46,7 @@ const StyledDiv = styled.div`
       }
     }
 
-    .comments {
+    .newComments {
       border-top: 1.5px solid lightgray;
       padding: 5px;
       
@@ -64,7 +63,6 @@ const StyledDiv = styled.div`
 const Post = (props) => {
   return (
     <StyledDiv >
-
       <div className="header" >
         <Avatar avatar={props.avatar} />
         <h3> {props.username} </h3>  
@@ -80,10 +78,16 @@ const Post = (props) => {
             <FontAwesomeIcon icon={faComment} size="2x" />
             <FontAwesomeIcon icon={faPaperPlane} size="2x" />
           </div>
+            {props.postLikes ? props.postLikes.length + " likes"  : ""} <br/>
            <strong> {props.username} </strong> {props.caption}
+           <div className="comments">
+            {
+              props.coments ? props.coments.map((coment) => <div><strong>{coment.username}</strong> {coment.text}</div> ): ""
+            }
+           </div>
         </div>
 
-        <div className="comments" >
+        <div className="newComments" >
           <input placeholder="Add a comment" />
           <a>ADD</a>
         </div>
