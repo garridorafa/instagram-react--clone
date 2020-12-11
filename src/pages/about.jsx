@@ -1,8 +1,12 @@
 import React from 'react';
-import Layout from '../components/Layout';
 import styled from 'styled-components';
 
+import Layout from '../components/Layout';
+import Avatar from '../components/Avatar';
+
+
 const profile = {
+  id: "",
   userName: 'codeman35',
   avatar: 'http://localhost:8000/avatar1.jpg',
   description: 'A fictional person, doing fictional things ...',
@@ -93,7 +97,7 @@ const AboutPage = () => {
     <Layout>
       <StyledDiv>
         <div className="info">
-          <img src={profile.avatar} alt="User Avatar" />
+          <Avatar key={profile.id} avatar={profile.avatar} />
           <div>
             <span>{profile.userName}</span> <br />
             {`${profile.publications} posts  &  ${profile.followers} followers `} <br /><br />
