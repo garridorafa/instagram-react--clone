@@ -20,13 +20,14 @@ const StyledDiv = styled.div`
   position: sticky;
   top: 0;
   z-index: 1;
-  height: 67px;
+  height: 53px;
   background-color: white;
   border-bottom: 1.5px solid lightgray;
   
-  .logoName {
+  .logoName, .icon {
     text-decoration: none;
     color: black;
+    font-size: .8rem;
 
     :active {
       color: black;
@@ -63,15 +64,19 @@ const Header = (props) => {
       <input className="search" placeholder="search" />
 
       <div className="icons" >
-        <Link to="/" className="logoName">
+        <Link to="/" className="icon">
           <FontAwesomeIcon icon={faHome} size="2x" />
         </Link>
-        <Link to="/direct/" className="logoName">
+        <Link to="/direct/" className="icon">
           <FontAwesomeIcon icon={faPaperPlane} size="2x" />
         </Link>
-        <FontAwesomeIcon icon={faClock} size="2x" />
-        <FontAwesomeIcon icon={faHeart} size="2x" />
-        <Link to="/about/">
+        <Link className="icon" >
+          <FontAwesomeIcon icon={faClock} size="2x" />
+        </Link>
+        <Link className="icon" >
+          <FontAwesomeIcon icon={faHeart} size="2x" />
+        </Link>
+        <Link to="/about/" className="icon" >
           <Avatar avatar={props.avatar} />
         </Link>
       </div>
