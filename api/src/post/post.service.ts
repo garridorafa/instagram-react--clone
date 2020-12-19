@@ -1,9 +1,11 @@
 import { Injectable } from '@nestjs/common';
+
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 
-import { Post } from './interfaces/post.intarface';
-import { CreatePostDTO } from './dto/post.dto';
+import { Post } from './interfaces/post.interface';
+import { CreatePostDTO } from "./dto/post.dto";
+
 
 @Injectable()
 export class PostService {
@@ -15,24 +17,24 @@ export class PostService {
     return posts;
   }
 
-  async getPost(postID: string): Promise<Post> {
-    const post = await this.postModel.findById(postID);
+  async getPost(postId: string): Promise<Post> {
+    const post = await this.postModel.findById(postId);
     return post;
   }
- 
+
   async createPost(createPostDTO: CreatePostDTO): Promise<Post> {
-    const post = new this.postModel(createPostDTO);
-    return await post.save();
+    const newPost = new this.postModel(createPostDTO);
+    return await newPost.save();
   }
 
-  async updatePost(postID: string, createPostDTO: CreatePostDTO): Promise<Post> {
-     const updatedPost = await this.postModel.findByIdAndUpdate(postID, createPostDTO, {new: true});
-     return updatedPost;
+  async updatePost(postId: string, createPostDTO: CreatePostDTO): Promise<Post> {
+    const updatedPost = await this.postModel.findByIdAndUpdate(postId, createPostDTO, {new: true});
+    return updatedPost;
   }
 
-  async deletePost(postID: string): Promise<Post> {
-    const deletePost = await this.postModel.findByIdAndDelete(postID);
-    return deletePost;
+  async deletePost(postId: string): Promise<any> {
+    const deletedPost = await this.postModel.findByIdAndDelete(postId);
+    return deletedPost;
   }
 
 }

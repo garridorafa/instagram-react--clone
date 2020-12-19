@@ -6,9 +6,9 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
-    PostModule, 
-    MongooseModule.forRoot('mongodb://localhost/instagram-react-clone'
-  )],
+    MongooseModule.forRoot('mongodb://localhost/instagram-react-clone'),
+    PostModule
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
