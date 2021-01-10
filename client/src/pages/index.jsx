@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import Layout from '../components/Layout';
-import Post from '../components/Post';
+import Layout from '../components/Layout/Layout';
+import Post from '../components/Post/Post';
 
 const data = [
   {

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Layout from '../components/Layout';
-import ChatBox from '../components/ChatBox';
+import Layout from '../components/Layout/Layout';
+import ChatBox from '../components/ChatBox/ChatBox';
 
 const StyledDiv = styled.div`
   display: flex;

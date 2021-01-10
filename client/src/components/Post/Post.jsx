@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faComment, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
-import Avatar from './avatar';
+import Avatar from '../Avatar/Avatar';
 
 
 const StyledDiv = styled.div`

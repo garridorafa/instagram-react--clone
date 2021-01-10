@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Layout from '../components/Layout';
-import Avatar from '../components/Avatar';
+import Layout from '../components/Layout/Layout';
+import Avatar from '../components/Avatar/Avatar';
 
 
 const profile = {
